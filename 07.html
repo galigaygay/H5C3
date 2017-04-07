@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.progress{
+			width: 800px;
+			height: 40px;
+			border: 1px solid #000;
+			border-radius: 20px;
+			overflow: hidden;
+		}
+		.info{
+			width: 0px;
+			height: 100%;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="progress">
+		<div class="info"></div>
+	</div>
+
+	<input type="range" min="0" max="800" value="0">
+	<input type="text" >
+	<script type="text/javascript">
+	var range = document.querySelector('input[type="range"]');
+	var text = document.querySelector('input[type="text"]');
+	var info = document.querySelector('.info');
+
+	/*range.addEventListener('change', function (argument) {
+		// 获取range的当前value值
+		var val = this.value;
+		info.style.width = val + 'px';
+	})*/
+	
+	/*input事件 是当在表单里面输入值的情况不断触发，输入一次触发一次*/
+
+	range.addEventListener('input', function (argument) {
+		// 获取range的当前value值
+		var val = this.value;
+		info.style.width = val + 'px';
+	});
+	// H5的新事件 有兼容问题 在移动端去使用
+	text.addEventListener('input', function (argument) {
+		// 获取range的当前value值
+		console.log(1);
+	});
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		header{
+			width: 300px;
+			height: 300px;
+			background-color: hotpink;
+			display: block;
+		}
+		nav{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			display: block;
+		}
+	</style>
+	<script type="text/javascript">
+	// 创建标签  默认以这种方式创建出来的是一个行内元素
+	// document.createElement('header');
+	   var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', ');
+  		var i= e.length;
+  		while (i--){
+  		     document.createElement(e[i])
+  		}  
+	</script>
+</head>
+<body>
+	<header>
+		
+		我是一个头部，哈哈哈！！！
+	</header>
+	<nav >我是一个小导航，呵呵呵呵！！！</nav>
+</body>
+</html>

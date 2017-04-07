@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		header{
+			width: 300px;
+			height: 300px;
+			background-color: hotpink;
+		}
+		nav{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+	</style>
+	<!-- IE的hack  在其他浏览器里面会当成注释去解析，在IE里面，会判断当前浏览器的版本，如果低于某一个版本，则会直接运行 -->
+
+
+	<!--[if lte IE 8]> 
+		<style>
+			header{
+				background: yellowgreen;
+			}
+		</style>
+		<script type="text/javascript" src="js/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<header>
+		
+		我是一个头部，哈哈哈！！！
+	</header>
+	<nav >我是一个小导航，呵呵呵呵！！！</nav>
+</body>
+</html>

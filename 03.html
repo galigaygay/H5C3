@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="">
+	<!-- H5自动集成的data表单，有兼容问题。并且样子比较丑，但是在移动端的样式是直接调取你手机里面自带的日期控件，还可以在公司内部的一些系统运用 -->
+
+		日期：<input type="date">
+		<br>
+		<br>
+		<br>
+		时间：<input type="time">
+		<br>
+		<br>
+		<br>
+		月份：<input type="month">
+		<br>
+		<br>
+		<br>
+		星期：<input type="week">
+		<br>
+		<br>
+		<br>
+		数字：<input type="number">
+		<br>
+		<br>
+		<br>
+		<!-- 滑动条里面一般都有最小值和最大值的控制 -->
+		滑动条：<input id="range" type="range" min="0" max="1000" value="50">
+		<br>
+		<br>
+		<br>
+		搜索：<input type="search">
+		<br>
+		<br>
+		<br>
+		颜色：<input id="color" type="color">
+	</form>
+
+	<script type="text/javascript">
+
+	var range = document.getElementById('range');
+	var color = document.getElementById('color');
+	range.addEventListener('change', function () {
+		// 是表单的一个事件 当表单里面的值发生改变的时候，并且失去焦点的时候触发
+		console.log(this.value);
+	});
+
+
+	/*$.each(function(index,el) {
+		argument[0]
+	});*/
+
+	color.addEventListener('change',function () {
+		// 拿到当前的color值
+		var val = this.value;
+		document.body.style.backgroundColor = val;
+	})
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width:500px;
+			height:500px;
+			border: 1px solid #000;
+			margin:100px auto;
+			position:relative;
+		}
+		.clock{
+			width:200px;
+			height:200px;
+			border: 6px solid cyan;
+			position:absolute;
+			left:50%;
+			top:50%;
+			transform:translate(-50%,-50%);
+			border-radius:50%;
+		}
+		.line{
+			width:2px;
+			height:200px;
+			background-color: #000;
+			position:absolute;
+			left:50%;
+			top:50%;
+			transform:translate(-50%,-50%);
+		}
+		.bgf{
+			width:180px;
+			height:180px;
+			background-color: #fff;
+			position:absolute;
+			left:50%;
+			top:50%;
+			transform:translate(-50%,-50%);
+			border-radius:50%;
+		}
+		.hour,.minute,.ball{
+			width:8px;
+			height:60px;
+			background-color: red;
+			position:absolute;
+			left:50%;
+			top:50%;
+			transform:translate(-50%,-100%);
+			border-radius:4px;
+			transform-origin: bottom center;
+		}
+		.minute{
+			width:6px;
+			height:90px;
+			background-color: green;
+			animation:zhuan 60s steps(60) infinite;
+		}
+		.ball{
+			height:100px;
+			background-color: transparent;
+			animation:zhuan 60s linear infinite;
+		}
+		.ball:before{
+			content:'';
+			width:5px;
+			height:5px;
+			position:absolute;
+			left:1px;
+			top:-5px;
+			background-color: pink;
+		}
+		@keyframes zhuan{
+			0%{
+				transform:translate(-50%,-100%) rotate(0deg);
+			}
+			100%{
+				transform:translate(-50%,-100%) rotate(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="clock">
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="bgf"></div>
+			<div class="hour"></div>
+			<div class="minute"></div>
+			<div class="ball"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var line = document.querySelectorAll('.line');
+		var _hour = document.querySelector('.hour')
+		// 让每一条刻度线转对应的角度
+		for(var i = 0; i < line.length; i++){
+			line[i].style.transform = 'translate(-50%,-50%) rotate('+i*30+'deg)'
+		}
+		// 需求 ：让时针根据用户当前的时间去旋转到对应的角度
+		
+		//（1）获取本地时间
+		var time = new Date();
+		// 获取小时
+		var hours = time.getHours();
+		// 因为我们的本地时间默认是24小时制，而我们的表盘默认是12小时制，所以，如果大于12的话我们就直接减去12
+		if(hours > 12){
+			hours -= 12;
+		}
+		_hour.style.transform = 'translate(-50%,-100%) rotate('+hours*30+'deg)';
+	</script>
+</body>
+</html>

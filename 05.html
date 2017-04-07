@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	/* video{
+		width: 200px;
+		height: 200px;
+	} */
+	</style>
+</head>
+<body>
+	<!-- 
+		autoplay 自动播放
+		controls 控制器
+		loop 控制视频循环播放 
+		poster 在没有播放之前渲染一张图片作为预览
+		不同的浏览器之间识别的格式是不一样的，不过现在基本上MP4格式基本被兼容
+		width,height都是可以调节的
+	-->
+	<video autoplay controls loop poster="img/jl.jpg">
+		<source src="movie/movie01.mp4">
+		<source src="movie/movie01.ogg">
+		<source src="movie/movie01.webm">
+		仁兄，你的浏览器太LOW，赶紧升级吧 <a href="www.baidu.com">点击升级</a>
+	</video>
+</body>
+</html>
